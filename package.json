@@ -1,0 +1,52 @@
+{
+  "name": "zen-chatbox",
+  "displayName": "zen-chatbox",
+  "description": "Minimalist AI Chatbox",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "zen-chatbox-container",
+          "title": "Zen Chatbox",
+          "icon": "$(hubot)"
+        }
+      ]
+    },
+    "views": {
+      "zen-chatbox-container": [
+        {
+          "type": "webview",
+          "id": "zen-chatbox-view",
+          "name": "Zen Chat"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "zen-chatbox.start",
+        "title": "Start Zen Chatbox"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "18.x",
+    "typescript": "^5.3.3"
+  }
+}
